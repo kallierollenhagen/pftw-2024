@@ -1,6 +1,7 @@
 let grid = undefined;
-//let stroke1 = prompt("Enter a basic color name in lower case", "gray");
-//let stroke2 = prompt("Enter another basic color lowercase", "purple");
+let stroke1 = prompt("Enter a basic color name in lower case", "gray");
+let stroke2 = prompt("Enter another basic color lowercase", "purple");
+let hatfill = prompt("Enter a third basic color, lowercase", "pink");
 
 // SNOW = random dot generator by hafiyyandi
 
@@ -24,14 +25,14 @@ function setup() {
 }
 
 //White hill
-    fill('white');
+    fill(255, 255, 250);
     quad(0, 770, 1000, 650, 1000, 800, 0, 800); 
 
 //SNOWMAN large
     // snowman legs
     fill(250, 249, 246);
     strokeWeight(10)
-    stroke(55, 204, 0); // replace with stroke(stroke1);
+    stroke(stroke1);
     // body - bottom
     ellipse(650, 600, 350, 350);
     // body - middle
@@ -45,18 +46,30 @@ function setup() {
     //right arm
     line(775, 400, 900, 350)
     // hat brim
-    stroke(20, 20, 60);  // replace with  stroke(stroke2);
+    stroke(stroke2);
     strokeWeight(20);
     line(550, 120, 750, 120);
     // hat body
+    fill(hatfill);
     rect(575, 10, 145, 90);
-    // eyes
+    // eyes - black
     stroke(0);
     strokeWeight(40);
     point(610, 185);
     point(690, 185);
+    //eyes - whites
+    stroke(255);
+    strokeWeight(15);
+    point(615, 188);
+    point(684, 188);
+    //nose
+    stroke('orange');
+    fill('orange');
+    strokeWeight(5);
+    triangle(645, 180, 655, 180, 650, 220);
     // mouth
     noFill();
+    stroke(0);
     strokeWeight(10);
     arc(650, 210, 100, 100, 120, 103);
     //buttons
@@ -70,20 +83,32 @@ function setup() {
 
     fill(250, 249, 246);
     strokeWeight(10)
-    stroke(55, 204, 0); // replace with stroke(stroke1);
+    stroke(stroke1);
     // body - bottom
     ellipse(250, 650, 250, 265);
     // body - top
     ellipse(250, 475, 140, 175);
-    // eyes
+    // eyes - blacks
     stroke(0);
     strokeWeight(35);
     point(220, 465);
     point(280, 465);
+    //eyes - whites
+    stroke(255);
+    strokeWeight(15);
+    point(232, 465);
+    point(292, 465);
     // mouth
+    stroke(0);
     strokeWeight(30);
     point(250, 515);
+    //nose
+    stroke('orange');
+    fill('orange');
+    strokeWeight(5);
+    triangle(240, 475, 290, 490, 240, 490);
     //buttons
+    stroke(0);
     strokeWeight(30);
     point(250, 630);
     point(250, 670);
