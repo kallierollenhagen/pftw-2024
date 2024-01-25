@@ -8,7 +8,7 @@
 
 let userMovie = prompt("What is your favorite movie?");
 
-const myArr = ["Florida Project ", "Tree of Life ", "Call Me By Your Name ", "The Lost Daughter ", "The Lobster "];
+const myArr = ["Florida Project", " Tree of Life", " Call Me By Your Name", " The Lost Daughter", " The Lobster"];
 myArr.push(userMovie);
 console.log(myArr);
 alert("The best movies are " + myArr.toString());
