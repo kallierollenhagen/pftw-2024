@@ -34,17 +34,14 @@ function mousePressed() {
         console.log('hit', clickCount);
         boxColor = '#fa43db';  // change the color of rectangle if hit/mouse pressed
     }
-
 }
-
+//makes it so the box is green everything mouse is release
 function mouseReleased() {
     boxColor = '#b8f536';
 }
 
-
 // Function to draw our object
 function drawShape () {
-
     fill(boxColor);
     noStroke();
     rect(rectX, rectY, rectWidth, rectHeight);
