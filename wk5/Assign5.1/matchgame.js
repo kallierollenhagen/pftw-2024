@@ -62,13 +62,6 @@ function setup () {
 // set win message, number of matches, number of attempts, etc.
 function draw () {
     background('#02518a');
-    // winning message that appears when they get 8 pairs
-    if (gameState.numMatched === gameState.totalPairs) {
-        fill('yellow');
-        textSize(60);
-        text('You win!!', 50, 425);
-        noLoop();
-    }
 
     for (let k = 0; k < cards.length; k++) {
         if(!cards[k].isMatch) {
@@ -80,11 +73,21 @@ function draw () {
     noLoop();
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
-    fill(255);
+    fill('#f4efdc');
     textSize(24);
     text('Karel Martens Memory Game', 200, 50);
     text('Attempts: ' + gameState.attempts, 850, 50);
     text('Matches: ' + gameState.numMatched + '/8', 1120, 50);
+    
+    // winning message that appears when they get 8 pairs
+    if (gameState.numMatched === gameState.totalPairs) {
+        fill('#fa0e73');
+        stroke('#f4efdc');
+        strokeWeight(7);
+        textSize(230);
+        text('HOORAY!', 210, 525);
+        noLoop();
+    }
 }
 
 // make card "flip" when pressed, and make sure that we can only have 2 unmatched cards up at a time
