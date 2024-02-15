@@ -47,16 +47,26 @@ function setup () {
     selectedFaces = shuffleArray(selectedFaces);
 
     // create a 4x4 grid via a loop-within-a-loop function, where j sets rows and i sets columns
-    // CHECK: faceImage OR cardFaceImg??
     for (let j = 0; j < 4; j++) {
         for (let i = 0; i < 4; i++) {
             const faceImage = selectedFaces.pop(); // pop removes the last item in the array
             cards.push(new Card(startingX, startingY, faceImage));
-            startingX += 275; // increment where cards start on x axis
+            startingX += 265; // increment where cards start on x axis
         }
-        startingY += 200
+        startingY += 185
         startingX = 200
     }
+    
+    // button to restart
+    let button = createButton('Reset');
+    let col = color('#f4efdc');
+    button.position(1150, 30);
+    button.style('font-size', '24px');
+    button.style('background-color', col);
+    button.mousePressed(resetGame);
+}
+function resetGame() {
+    location.reload()
 }
 
 // set win message, number of matches, number of attempts, etc.
@@ -76,8 +86,8 @@ function draw () {
     fill('#f4efdc');
     textSize(24);
     text('Karel Martens Memory Game', 200, 50);
-    text('Attempts: ' + gameState.attempts, 850, 50);
-    text('Matches: ' + gameState.numMatched + '/8', 1120, 50);
+    text('Attempts: ' + gameState.attempts, 730, 50);
+    text('Matches: ' + gameState.numMatched + '/8', 890, 50);
     
     // winning message that appears when they get 8 pairs
     if (gameState.numMatched === gameState.totalPairs) {
@@ -121,7 +131,7 @@ function mousePressed() {
             const loopTimeout = window.setTimeout(() => {
                 loop();
                 window.clearTimeout(loopTimeout);
-            }, 2000)
+            }, 1500)
         }
     }
 }
