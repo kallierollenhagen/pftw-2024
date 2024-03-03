@@ -13,7 +13,7 @@ function App() {
   const camelidsObjects = [
     {
       name: "Llama",
-      fact: "Baby llamas are called crias, as are baby aplacas.",
+      fact: "Baby llamas are called crias, as are baby alpacas.",
       img: <img src={imageLlama} alt="baby llama" />,
     },
     {

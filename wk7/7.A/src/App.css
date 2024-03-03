@@ -1,0 +1,36 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.restaurant-table {
+  width: 100%;
+  border: 3px solid goldenrod;
+  border-collapse: collapse;
+}
+.restaurant-table th, .restaurant-table tr {
+  border: 1px solid goldenrod;
+  padding: 10px;
+}
+.restaurant-table td, .commander-table th {
+  border: 1px solid goldenrod;
+  text-align: center;
+}
+.restaurant-table thead {
+  font-size: 1.2rem;
+  background-color: #9c355c;
+}
+.restaurant-table img {
+  width: 200px;
+  padding: 10px;
+}
