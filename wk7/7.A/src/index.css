@@ -24,4 +24,7 @@ a {
 a:hover {
   color: #ffc4db;
 }
+button {
+  padding: 25px;
+}
 
