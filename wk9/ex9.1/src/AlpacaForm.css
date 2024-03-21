@@ -1,0 +1,15 @@
+/* form related */
+
+fieldset {
+    margin-bottom: 1em;
+  }
+  input[type=checkbox] {
+    margin-right: 20px;
+    margin-left: 5px;
+  }
+  input[type=text] {
+    margin-left: 15px;
+  }
+  input[type=select] {
+    margin-left: 15px;
+  }
