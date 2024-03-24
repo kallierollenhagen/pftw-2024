@@ -1,0 +1,37 @@
+.new-restaurant-form-wrapper{
+    color: #5c1712;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 5px solid #496b3a;
+    padding: 20px;
+}
+.form-group {
+    display: flex;
+    flex-wrap: row;
+    margin: 10px;
+    width: 90%;
+    padding: 5px
+}
+.form-group.error {
+    border: 1px solid red;
+}
+.errorFeedback {
+    margin-top: -5px;
+    color: red;
+    text-align: center;
+    font-weight: 900;
+}
+label {
+    margin-right: 5px;
+}
+.required::before {
+    content: "* ";
+    color: red;
+}
+input {
+    margin-left: 5px;
+    flex-grow: 1;
+}
+button {
+    margin: 20px;
+}
