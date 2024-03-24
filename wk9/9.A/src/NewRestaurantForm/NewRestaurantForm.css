@@ -28,7 +28,7 @@ form-group.radio-group{
     font-weight: 900;
 }
 label {
-    margin-right: 5px;
+    padding-right: 20px;
 }
 .required::before {
     content: "* ";
@@ -36,6 +36,8 @@ label {
 }
 input {
     margin-left: 5px;
+    margin-bottom: 14px;
+    height: 20px;
     flex-grow: 1;
 }
 legend {
