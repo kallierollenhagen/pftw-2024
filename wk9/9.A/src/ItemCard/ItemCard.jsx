@@ -47,7 +47,7 @@ ItemCard.propTypes = {
     link: PropTypes.string,
     location: PropTypes.string,
     about: PropTypes.string,
-    rating: PropTypes.number,
+    rating: PropTypes.string,
     image: PropTypes.string,
     id: PropTypes.string,
     duplicateFn: PropTypes.func,

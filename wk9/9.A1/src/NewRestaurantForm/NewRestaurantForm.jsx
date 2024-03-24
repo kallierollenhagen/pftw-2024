@@ -50,77 +50,70 @@ export function NewRestaurantForm({ addCardFn }) {
         return valid;
     }
 
-    // function changeHandler(event) {
-    //     console.log(event.target.value);
-    //     if (event.target.name === "stars") {
-    //         // figure out what star to add or remove
-    //         const newStar = event.target.id;
-    //         if (newCard.stars.includes(newStar)) {
-    //             const filteredArray = newCard.stars.filter((star) => {
-    //                 return star !== newStar;
-    //             });
-    //             setNewCard((prevCard) => {
-    //                 return {
-    //                     ...prevCard,
-    //                     stars: filteredArray,
-    //                 };
-    //             });
-    //         } else {
-    //             // we need to add the star rating
-    //             const addedStars = [...newCard.stars, newStar];
-    //             setNewCard((prevCard) => {
-    //                 return {
-    //                     ...prevCard,
-    //                     stars: addedStars,
-    //                 };
-    //             });
-    //         }
-    //     } else {
-    //         const needsBoolean = ["highlyRated"];
-    //         const updatedTarget = needsBoolean.includes(event.target.name)
-    //             ? !!event.target.checked
-    //             : event.target.value;
-    //         setNewCard((prevCard) => {
-    //             return {
-    //                 ...prevCard,
-    //                 [event.target.name]: updatedTarget,
-    //             };
-    //         });
-    //     }
-    // }
-
     function changeHandler(event) {
-        const { name, value } = event.target;
-        setNewCard((prevCard) => ({
-            ...prevCard,
-            [name]: value,
-        }));
+        console.log(event.target.value);
+        if (event.target.name === "stars") {
+            // figure out what star to add or remove
+            const newStar = event.target.id;
+            if (newCard.stars.includes(newStar)) {
+                const filteredArray = newCard.stars.filter((star) => {
+                    return star !== newStar;
+                });
+                setNewCard((prevCard) => {
+                    return {
+                        ...prevCard,
+                        stars: filteredArray,
+                    };
+                });
+            } else {
+                // we need to add the star rating
+                const addedStars = [...newCard.stars, newStar];
+                setNewCard((prevCard) => {
+                    return {
+                        ...prevCard,
+                        stars: addedStars,
+                    };
+                });
+            }
+        } else {
+            const needsBoolean = ["highlyRated"];
+            const updatedTarget = needsBoolean.includes(event.target.name)
+                ? !!event.target.checked
+                : event.target.value;
+            setNewCard((prevCard) => {
+                return {
+                    ...prevCard,
+                    [event.target.name]: updatedTarget,
+                };
+            });
+        }
     }
 
-    // function submitHandler(event) {
-    //     event.preventDefault(); // prevents the page from reloading (default behavior) due to precense of a button
-    //     console.log({ newCard });
-    //     if (validateForm(newCard)) {
-    //         // send card to app
-    //         addCardFn(newCard);
-    //         // reset values
-    //         setNewCard(initialCardSetting);
-    //     }
-    // }
 
     function submitHandler(event) {
-        event.preventDefault();
+        event.preventDefault(); // prevents the page from reloading (default behavior) due to precense of a button
+        console.log({ newCard });
         if (validateForm(newCard)) {
+            // send card to app
             addCardFn(newCard);
+            // reset values
             setNewCard(initialCardSetting);
         }
     }
+
+    // function submitHandler(event) {
+    //     event.preventDefault();
+    //     if (validateForm(newCard)) {
+    //         addCardFn(newCard);
+    //         setNewCard(initialCardSetting);
+    //     }
+    // }
     
     return (
         <form className="new-restaurant-form-wrapper" onSubmit={submitHandler}>
             <fieldset>
                 <legend>Restaurant Details</legend>
-                {/* <div className={{"form-group": true, "error": errorObj.restaurant}}>
+                <div className={{"form-group": true, "error": errorObj.restaurant}}>
                     <label className="required" htmlFor="restaurant">
                         Restaurant Name
                     </label>
@@ -147,9 +140,9 @@ export function NewRestaurantForm({ addCardFn }) {
                             <small className="errorFeedback">{errorObj.restaurant}</small>
                         </>
                     )}
-                </div> */}
+                </div>
 
-                <div className={`form-group ${errorObj.restaurant && "error"}`}>
+                {/* <div className={`form-group ${errorObj.restaurant && "error"}`}>
                     <label className="required" htmlFor="restaurant">
                         Restaurant Name
                     </label>
@@ -161,7 +154,7 @@ export function NewRestaurantForm({ addCardFn }) {
                         onChange={changeHandler}
                     />
                     {errorObj.restaurant && <small className="errorFeedback">{errorObj.restaurant}</small>}
-                </div>
+                </div> */}
 
                 <div className="formgroup">
                     <label htmlFor="link">
@@ -326,21 +319,6 @@ export function NewRestaurantForm({ addCardFn }) {
                     )}
                 </div>
             </fieldset>
-            <fieldset>
-                <legend>Collection Details</legend>
-                <div className="form-group">
-                    <label htmlFor="highRating">
-                        Highly rated
-                    </label>
-                    <input 
-                        type="checkbox" 
-                        name="highlyRated" 
-                        id="highlyRated" 
-                        onChange={changeHandler}
-                        value={newCard.highlyRated}
-                    />
-                </div>
-            </fieldset>
             <button type="submit" disabled={errorObj.restaurant || errorObj.rating || errorObj.image}>
                 Add Restaurant
             </button>
@@ -364,6 +342,21 @@ export function NewRestaurantForm({ addCardFn }) {
                         </label>
                     ))}
                 </div>
+        <fieldset>
+            <legend>Collection Details</legend>
+            <div className="form-group">
+                <label htmlFor="highRating">
+                    Highly rated
+                </label>
+                <input 
+                    type="checkbox" 
+                    name="highlyRated" 
+                    id="highlyRated" 
+                    onChange={changeHandler}
+                    value={newCard.highlyRated}
+                />
+            </div>
+        </fieldset>
         </fieldset>
             <button type="submit" disabled={Object.values(errorObj).some(Boolean)}>
                 Add Restaurant

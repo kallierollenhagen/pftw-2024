@@ -1,23 +1,29 @@
 .new-restaurant-form-wrapper{
+    background-color: #b6abe9;
     color: #5c1712;
     font-size: 20px;
-    border-radius: 20px;
     border: 5px solid #496b3a;
     padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 .form-group {
     display: flex;
     flex-wrap: row;
     margin: 10px;
     width: 90%;
-    padding: 5px
+    padding: 5px;
 }
 .form-group.error {
-    border: 1px solid red;
+    border: 1px solid #dbe172;
+}
+form-group.radio-group{
+    margin: 15px;
 }
 .errorFeedback {
     margin-top: -5px;
-    color: red;
+    color: #dbe172;
     text-align: center;
     font-weight: 900;
 }
@@ -26,12 +32,19 @@ label {
 }
 .required::before {
     content: "* ";
-    color: red;
+    color: #dbe172;
 }
 input {
     margin-left: 5px;
     flex-grow: 1;
 }
+legend {
+    font-size: 24px;
+    font-weight: bold;
+}
 button {
+    padding: 15px;
     margin: 20px;
+    background-color: #dbe172;
+    font-size: 20px;
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import "./NewRestaurantForm.css";
+import star from "../assets/icons/star.svg";
 import clsx from "clsx";
 
 export function NewRestaurantForm({ addCardFn }) {
@@ -11,7 +12,6 @@ export function NewRestaurantForm({ addCardFn }) {
         about: "",
         rating: "",
         highlyRated: false,
-        // stars: [],
         stars: "",
         image: "",
     }
@@ -36,11 +36,6 @@ export function NewRestaurantForm({ addCardFn }) {
             errors.image = "The Image Field is required";
             valid = false;
         }
-        // if (newCard.stars.length === 0) {
-        //     errors.rating = "You must choose at least one rating";
-        //     valid = false;
-        // }
-
         if (!newCard.stars) { // Validate single star selection
             errors.stars = "You must choose a star rating";
             valid = false;
@@ -51,6 +46,8 @@ export function NewRestaurantForm({ addCardFn }) {
     }
 
     // function changeHandler(event) {
+    //     console.log(event.target.id);
+    //     console.log(event.target.name);
     //     console.log(event.target.value);
     //     if (event.target.name === "stars") {
     //         // figure out what star to add or remove
@@ -78,8 +75,7 @@ export function NewRestaurantForm({ addCardFn }) {
     //     } else {
     //         const needsBoolean = ["highlyRated"];
     //         const updatedTarget = needsBoolean.includes(event.target.name)
-    //             ? !!event.target.checked
-    //             : event.target.value;
+    //             ? !!event.target.checked : event.target.value;
     //         setNewCard((prevCard) => {
     //             return {
     //                 ...prevCard,
@@ -89,6 +85,45 @@ export function NewRestaurantForm({ addCardFn }) {
     //     }
     // }
 
+    // //     function changeHandler(event) {
+    // //     console.log(event.target.value);
+    // //     if (event.target.name === "stars") {
+    // //         // figure out what star to add or remove
+    // //         const newStar = event.target.id;
+    // //         if (newCard.stars.includes(newStar)) {
+    // //             const filteredArray = newCard.stars.filter((star) => {
+    // //                 return star !== newStar;
+    // //             });
+    // //             setNewCard((prevCard) => {
+    // //                 return {
+    // //                     ...prevCard,
+    // //                     stars: filteredArray,
+    // //                 };
+    // //             });
+    // //         } else {
+    // //             // we need to add the star rating
+    // //             const addedStars = [...newCard.stars, newStar];
+    // //             setNewCard((prevCard) => {
+    // //                 return {
+    // //                     ...prevCard,
+    // //                     stars: addedStars,
+    // //                 };
+    // //             });
+    // //         }
+    // //     } else {
+    // //         const needsBoolean = ["highlyRated"];
+    // //         const updatedTarget = needsBoolean.includes(event.target.name)
+    // //             ? !!event.target.checked
+    // //             : event.target.value;
+    // //         setNewCard((prevCard) => {
+    // //             return {
+    // //                 ...prevCard,
+    // //                 [event.target.name]: updatedTarget,
+    // //             };
+    // //         });
+    // //     }
+    // // }
+
     function changeHandler(event) {
         const { name, value } = event.target;
         setNewCard((prevCard) => ({
@@ -96,17 +131,6 @@ export function NewRestaurantForm({ addCardFn }) {
             [name]: value,
         }));
     }
-
-    // function submitHandler(event) {
-    //     event.preventDefault(); // prevents the page from reloading (default behavior) due to precense of a button
-    //     console.log({ newCard });
-    //     if (validateForm(newCard)) {
-    //         // send card to app
-    //         addCardFn(newCard);
-    //         // reset values
-    //         setNewCard(initialCardSetting);
-    //     }
-    // }
 
     function submitHandler(event) {
         event.preventDefault();
@@ -119,36 +143,7 @@ export function NewRestaurantForm({ addCardFn }) {
     return (
         <form className="new-restaurant-form-wrapper" onSubmit={submitHandler}>
             <fieldset>
-                <legend>Restaurant Details</legend>
-                {/* <div className={{"form-group": true, "error": errorObj.restaurant}}>
-                    <label className="required" htmlFor="restaurant">
-                        Restaurant Name
-                    </label>
-                    <input 
-                        type="text" 
-                        name="restaurant" 
-                        id="restaurant" 
-                        value={newCard.restaurant}
-                        onChange={changeHandler}
-                        onBlur={() => {
-                            if(newCard.restaurant) {
-                                setErrorObj ((preErrorObj) => {
-                                    return {
-                                        ...preErrorObj,
-                                        restaurant: ""
-                                    }
-                                })
-                            }
-                        }}
-                    />
-                    {errorObj.restaurant && (
-                        <>
-                            <br />
-                            <small className="errorFeedback">{errorObj.restaurant}</small>
-                        </>
-                    )}
-                </div> */}
-
+                <legend className="fieldsetHead">Restaurant Details</legend>
                 <div className={`form-group ${errorObj.restaurant && "error"}`}>
                     <label className="required" htmlFor="restaurant">
                         Restaurant Name
@@ -162,10 +157,9 @@ export function NewRestaurantForm({ addCardFn }) {
                     />
                     {errorObj.restaurant && <small className="errorFeedback">{errorObj.restaurant}</small>}
                 </div>
-
                 <div className="formgroup">
                     <label htmlFor="link">
-                        Link
+                        Website URL
                     </label>
                     <input 
                         type="text" 
@@ -189,7 +183,7 @@ export function NewRestaurantForm({ addCardFn }) {
                 </div>
                 <div className="formgroup">
                     <label htmlFor="rating">
-                        Rating
+                        Rating (from 1-5)
                     </label>
                     <input 
                         type="text" 
@@ -199,155 +193,22 @@ export function NewRestaurantForm({ addCardFn }) {
                         value={newCard.rating}
                     />
                 </div>
-                </fieldset>
-
-                {/* <fieldset>
-                    <legend>Stars</legend>
-                    {errorObj.rating && (
-                        <>
-                            <br />
-                            <small className="errorFeedback">{errorObj.rating}</small>
-                        </>
-                    )}
-                    <div className="formGroup checkbox-group">
-                        <label htmlFor="1">1
-                            <input 
-                                type="checkbox" 
-                                name="stars" 
-                                id="1" 
-                                onChange={changeHandler}
-                                checked={newCard.stars.includes("1")}
-                                onBlur={() => {
-                                    if(newCard.stars.length > 0) {
-                                        setErrorObj({
-                                            ...errorObj,
-                                            colors: ""
-                                        })
-                                    }
-                                }}
-                            />
-                        </label>
-                        <label htmlFor="2">2
-                            <input 
-                                type="checkbox" 
-                                name="stars"  
-                                id="2" 
-                                onChange={changeHandler}
-                                checked={newCard.stars.includes("2")}
-                                onBlur={() => {
-                                    if(newCard.stars.length > 0) {
-                                        setErrorObj({
-                                            ...errorObj,
-                                            colors: ""
-                                        })
-                                    }
-                                }}
-                            />
-                        </label>
-                        <label htmlFor="3">3
-                            <input 
-                                type="checkbox" 
-                                name="stars"  
-                                id="3" 
-                                onChange={changeHandler}
-                                checked={newCard.stars.includes("3")}
-                                onBlur={() => {
-                                    if(newCard.stars.length > 0) {
-                                        setErrorObj({
-                                            ...errorObj,
-                                            colors: ""
-                                        })
-                                    }
-                                }}
-                            />
-                        </label>
-                        <label htmlFor="4">4
-                            <input 
-                                type="checkbox" 
-                                name="stars" 
-                                id="4"
-                                onChange={changeHandler}
-                                checked={newCard.stars.includes("4")} 
-                                onBlur={() => {
-                                    if(newCard.stars.length > 0) {
-                                        setErrorObj({
-                                            ...errorObj,
-                                            colors: ""
-                                        })
-                                    }
-                                }}
-                            />
-                        </label>
-                        <label htmlFor="5">5
-                            <input 
-                                type="checkbox" 
-                                name="stars" 
-                                id="5" 
-                                onChange={changeHandler}
-                                checked={newCard.stars.includes("5")}
-                                onBlur={() => {
-                                    if(newCard.stars.length > 0) {
-                                        setErrorObj({
-                                            ...errorObj,
-                                            colors: ""
-                                        })
-                                    }
-                                }}
-                            />
-                        </label>
-                    </div>
-                </fieldset>
-                <div className={{"form-group": true, "error": errorObj.image}}>
+                <div className={`form-group ${errorObj.image && "error"}`}>
                     <label className="required" htmlFor="image">
-                        Image URL
+                        Restaurant Image (square)
                     </label>
                     <input 
                         type="text" 
                         name="image" 
                         id="image" 
-                        onChange={changeHandler}
                         value={newCard.image}
-                        onBlur={() => {
-                            if(newCard.image) {
-                                setErrorObj ((preErrorObj) => {
-                                    return {
-                                        ...preErrorObj,
-                                        image: ""
-                                    }
-                                })
-                            }
-                        }}
-                    />
-                     {errorObj.image && (
-                        <>
-                            <br />
-                            <small className="errorFeedback">{errorObj.image}</small>
-                        </>
-                    )}
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend>Collection Details</legend>
-                <div className="form-group">
-                    <label htmlFor="highRating">
-                        Highly rated
-                    </label>
-                    <input 
-                        type="checkbox" 
-                        name="highlyRated" 
-                        id="highlyRated" 
                         onChange={changeHandler}
-                        value={newCard.highlyRated}
                     />
+                    {errorObj.image && <small className="errorFeedback">{errorObj.restaurant}</small>}
                 </div>
-            </fieldset>
-            <button type="submit" disabled={errorObj.restaurant || errorObj.rating || errorObj.image}>
-                Add Restaurant
-            </button>
-        </form> */}
-
+        </fieldset>
         <fieldset>
-                <legend>Stars</legend>
+                <legend className="errorFeedback">Stars</legend>
                 {errorObj.stars && <small className="errorFeedback">{errorObj.stars}</small>}
                 <div className="formGroup radio-group">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -365,7 +226,45 @@ export function NewRestaurantForm({ addCardFn }) {
                     ))}
                 </div>
         </fieldset>
-            <button type="submit" disabled={Object.values(errorObj).some(Boolean)}>
+        {/* <fieldset>
+            <legend>Stars</legend>
+            {errorObj.stars && <small className="errorFeedback">{errorObj.stars}</small>}
+            <div className="formGroup radio-group">
+                {[1, 2, 3, 4, 5].map((star) => (
+                    <label key={star} htmlFor={star}>
+                        <input 
+                            type="radio" 
+                            name="stars" 
+                            id={star} 
+                            value={star}
+                            onChange={changeHandler}
+                            checked={newCard.stars === String(star)}
+                        />
+                        <FontAwesomeIcon icon={faStar} className={newCard.stars >= star ? "star-selected" : "star-unselected"} />
+                        <div> 
+                            <img src={star} className={newCard.stars >= star ? "star-selected" : "star-unselected"} /> 
+                        </div>
+                    </label>
+                ))}
+            </div>
+        </fieldset> */}
+
+        <fieldset>
+                <legend>Collection Details</legend>
+                <div className="form-group">
+                    <label htmlFor="highRating">
+                        Highly rated
+                    </label>
+                    <input 
+                        type="checkbox" 
+                        name="highlyRated" 
+                        id="highlyRated" 
+                        onChange={changeHandler}
+                        value={newCard.highlyRated}
+                    />
+                </div>
+            </fieldset>
+            <button type="submit" /*disabled={Object.values(errorObj).some(Boolean)}*/>
                 Add Restaurant
             </button>
         </form>
