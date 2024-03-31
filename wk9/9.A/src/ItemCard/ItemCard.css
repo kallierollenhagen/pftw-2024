@@ -17,6 +17,7 @@
 .cardImg img {
     max-width: 200px;
     width: 100%;
+    filter: grayscale(25%);
 }
 .cardTitle {
     font-family: Arial, Helvetica, sans-serif;

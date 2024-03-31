@@ -1,0 +1,18 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, [col-start] 1fr);
+    grid-gap: 10px;
+    justify-content: center; /* Center the grid items horizontally */
+}
+
+.location-body {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Media query for switching to single column layout */
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* Switch to single column layout */
+    }
+}

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
+
+:root {
+  font-family: "Asul", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(7, 0, 0, 0.87);
+  background-color: #eebcd7;
+}
+
+h1 {
+  color:#76c6e1;
+}
+
+a {
+  color: #4884dd;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #4bc1e2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+img {
+  width: 100vw;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
+
+:root {
+  font-family: "Asul", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(7, 0, 0, 0.87);
+  background-color: #eebcd7;
+}
+
+h1 {
+  color:#197898;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #d4f542;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+img {
+  width: 100vw;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+h2{
+  font-weight: 400;
+}
+h3 {
+  font-size: 1.7rem;
+  /* border-bottom: 4px solid #a870a8; 
+  padding-bottom: 5px; */
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid #a870a8;
+  padding: 0.6em 1.2em;
+  font-size: 1.5em;
+  font-family: inherit;
+  background-color: #a870a8;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

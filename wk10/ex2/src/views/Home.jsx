@@ -5,7 +5,7 @@ export function Home() {
     return (
         <>
         <h1>Music List</h1>
-        {musicData.map((song) => {
+        {songData.map((song) => {
             return (
                 <div key={song.slug}>
                     <img src={song.cover} alt={song.title} />
