@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
   createCanvas(600, 600); // Create a canvas to draw on
-  frameRate(7);
+  frameRate(12);
   rectMode(CENTER);
 }
 
