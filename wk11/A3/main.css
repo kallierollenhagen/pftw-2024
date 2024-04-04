@@ -14,16 +14,3 @@ body {
 h1 {
     margin-bottom: 10px;
 }
-button {
-    background-color: rgb(252, 205, 255);
-    font-size: 1.5rem;
-    color: rgb(0, 0, 111);
-    border: none;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 15px;
-}
-button:hover {
-    color: rgb(215, 5, 187);
-    background-color: rgb(234, 228, 60);
-}
