@@ -8,8 +8,6 @@ let hinges = []; // Array to store positions, angles, lengths, and colors for ea
 let strokeWeightValue = 40; // Uniform stroke weight
 let greetings = ["Hi", "Howdy", "Hello", "Welcome", "Glad you're here", "Wow, hey!", "Come on in!", "Hey!"]; // Array of greeting messages
 let currentGreeting; // Variable to store the current greeting
-// let angle1 = 0.0;
-// let angle2 = 0.0;
 
 function setup() {
   createCanvas(1000, 500);
