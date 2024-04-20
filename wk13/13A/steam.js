@@ -6,14 +6,16 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight); 
-  centerX = windowWidth * 0.5; 
-  centerY = windowHeight * 0.5; 
   vectors = []; // Initialize an empty array to store vector data
   rowCount = 250; // Set the number of rows in the grid
   colCount = 250; // Set the number of columns in the grid
   colW = windowWidth / colCount; // Calculate the width of each column in the grid
   rowH = windowHeight / rowCount; // Calculate the height of each row in the grid
-  createField(); // Call a function to create the vector field
+  
+  // Calculate the starting position of the vectors
+  let startY = height / 2 + coffeeCup.height / 2 - 100;
+  
+  createField(startY); // Call a function to create the vector field
   noStroke(); 
 }
 
@@ -21,7 +23,7 @@ function draw() {
   background(82, 163, 106); // Set the background color
   
   // Draw coffee cup image
-  image(coffeeCup, width /2 - 155, height/2, 400, 400);
+  image(coffeeCup, width / 2 - 155, height / 2 - coffeeCup.height / 2, 400, 400);
   
   // Loop through each vector in the vectors array
   for (let i = 0; i < vectors.length; i++) {
@@ -35,8 +37,8 @@ function draw() {
     // Calculate the angle of the vector using Perlin noise
     vector.angle = noise(vector.noiseX, vector.noiseY, vector.noiseZ) * PI;
     
-    // Calculate the size of the wave based on noise and position (from p5js example library)
-    let r = vector.angle * 70 + (vector.y * 0.01) - (pow(abs(centerX - vector.x), 1.15 - sin((frameCount - vector.y) * 0.005) * 0.1) - pow(abs(windowHeight - vector.y), 0.2)) + sin((frameCount + vector.x + (vector.y) * 0.5) * 0.06) * 20;
+    // Calculate the size of the wave based on noise and position
+    let r = vector.angle * 70 + (vector.y * 0.01) - (pow(abs(width / 2 - vector.x), 1.15 - sin((frameCount - vector.y) * 0.005) * 0.1) - pow(abs(windowHeight - vector.y), 0.2)) + sin((frameCount + vector.x + (vector.y) * 0.5) * 0.06) * 20;
     r *= 1 * sin(vector.angle);
   
     // Set the color of the vector to transparent white
@@ -53,17 +55,15 @@ function draw() {
   }
 }
 
-function createField() {
-  let coffeeMugTop = height / 2 - 750; // Calculate the top position of the coffee mug image
-  
+function createField(startY) {
   // Loop through each column and row to create the vector field
   for (let col = 0; col < colCount; col += 1) {
     for (let row = 0; row < rowCount; row += 1) {
       const x = col * colW; // Calculate the x-coordinate of the current vector
-      let y = row * rowH + coffeeMugTop; // Calculate the y-coordinate of the current vector
+      let y = row * rowH - windowHeight * .75 + 0 //startY; // Calculate the y-coordinate of the current vector
       
-      // Prevent the wave vector from going above the coffee mug top
-      y = max(y, coffeeMugTop);
+      // Prevent the wave vector from going above the top of the window
+      y = max(y, 0);
       
       // Calculate Perlin noise values for animation
       const noiseX = col * 0.03;
@@ -85,4 +85,14 @@ function createField() {
       }
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  colW = windowWidth / colCount;
+  rowH = windowHeight / rowCount;
+  vectors = [];
+  // let startY = height / 2 + coffeeCup.height / 2 - 100;
+  let startY = height / 2 + 100;
+  createField(startY);
 }
