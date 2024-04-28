@@ -5,11 +5,18 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Apfel";
+  src: local("Apfel"),
+    url("./fonts/ApfelGrotezk-Regular.woff2") format("woff2");
+  font-weight: regular;
+}
+
 :root {
-  font-family: "NectoMono", serif;
+  font-family: "Apfel", sans-serif;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(7, 0, 0, 0.87);
   background-color: #f2f2f2;
@@ -17,8 +24,23 @@
 
 h1 {
   color:#197898;
+  font-family: "NectoMono", san-serif;
+  font-size: 2.5em;
+  line-height: 1.1;
 }
-
+h2{
+  font-family: "NectoMono", san-serif;
+  font-size: 1.4rem;
+  margin: 0.5rem;
+}
+h3 {
+  font-size: 1.3rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  /* border-bottom: 4px solid #a870a8; 
+  padding-bottom: 5px; */
+}
 a {
   color: #ffffff;
   text-decoration: inherit;
@@ -39,25 +61,12 @@ img {
   max-width: 500px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-h2{
-  font-weight: 400;
-  font-size: 1.4rem;
-}
-h3 {
-  font-size: 1.7rem;
-  /* border-bottom: 4px solid #a870a8; 
-  padding-bottom: 5px; */
-}
-
 button {
   border-radius: 8px;
   border: 1px solid #a870a8;
-  padding: 0.6em 1.2em;
-  font-size: 1.5em;
+  padding: 0.8em;
+  margin: 1.5em;
+  font-size: 1.2em;
   font-family: inherit;
   background-color: #a870a8;
   cursor: pointer;

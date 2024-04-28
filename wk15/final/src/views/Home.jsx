@@ -26,6 +26,9 @@ export function Home() {
                     );
                 })}
             </div>
+            <div className="footer">
+                <p>Copyright © 2024 Rural Design Studio</p>
+            </div>
         </>
     );
 }

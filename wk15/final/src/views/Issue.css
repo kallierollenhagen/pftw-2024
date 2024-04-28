@@ -1,3 +1,20 @@
+/* .grid {
+    display: grid;
+    grid-template-columns: repeat(2, [col-start] 1fr);
+    grid-gap: 10px;
+    justify-content: center; /* Center the grid items horizontally */
+
+nav {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute items along the main axis */
+}
+
+.issue-masthead {
+    max-width: 250px;
+    margin-left: auto; /* Push masthead to the right */
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, [col-start] 1fr);
@@ -6,13 +23,43 @@
 }
 
 .location-body {
-    max-width: 850px;
+    max-width: 1050px;
     margin: 0 auto;
+}
+
+.mockup {
+    max-width: 300px; /* Set max width of mockup image */
+    float: left; /* Align mockup image to the left */
+    margin-right: 20px; /* Add space between mockup image and text */
 }
 
 /* Media query for switching to single column layout */
 @media screen and (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr; /* Switch to single column layout */
+
+    .nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start of the container */
     }
+
+    .issue-masthead {
+        margin-left: 0; /* Reset margin */
+        margin-top: 10px; /* Add space between masthead and h1 */
+    }
+    }
+
+    @media screen and (max-width: 768px) {
+        .mockup {
+            float: none; /* Remove float */
+            margin-right: 0; /* Reset margin */
+            margin-bottom: 20px; /* Add space below mockup image */
+        }
+    
+        .location-body h2,
+        .location-body p,
+        .location-body h3,
+        .location-body p {
+            margin-left: 0; /* Reset margin for text */
+        }
 }
