@@ -14,7 +14,7 @@ export function Home() {
                         <div className="location-card" key={issue.slug}>
                             <div className="container">
                             <Link to={issue.slug}>
-                                <img src={issue.cover} alt={issue.location} />
+                                <img style={{ borderColor: issue.color1, borderWidth: '15px' }} src={issue.cover} alt={issue.location} />
                             </Link>
                             <Link to={issue.slug}>
                                 <h2 className="centered">

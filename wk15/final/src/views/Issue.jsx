@@ -20,21 +20,24 @@ export function Issue({data}) {
             </nav>
             <div className="location-body">
                 <img className="mockup" src={selectedIssue.mockup} alt={selectedIssue.location} />
-                <h2>{selectedIssue.blurb}</h2>
-                <p>{selectedIssue.description}</p>
-                <h3>Not to miss</h3>
-                <p>{selectedIssue.highlights}</p>
-                <h3>Where to eat</h3>
-                <p>{selectedIssue.food}</p>
+                <div className="body-text">
+                    <h2>{selectedIssue.blurb}</h2>
+                    <p>{selectedIssue.description}</p>
+                    <h3>Not to miss</h3>
+                    <p>{selectedIssue.highlights}</p>
+                    <h3>Where to eat</h3>
+                    <p>{selectedIssue.food}</p>
+                </div>
             </div>
             <div className="grid">
-                <img src={selectedIssue.cover} alt={selectedIssue.location} />
                 <img src={selectedIssue.image2} alt={selectedIssue.location} />
                 <img src={selectedIssue.image3} alt={selectedIssue.location} />
                 <img src={selectedIssue.image4} alt={selectedIssue.location} />
+                <img src={selectedIssue.image5} alt={selectedIssue.location} />
             </div>
             <div className="Footer">
                 <button><Link to="/">Return Home</Link></button>
+                <p>Copyright © 2024 Rural Design Studio</p>
             </div>
         </div>
     )

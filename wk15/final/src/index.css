@@ -21,9 +21,8 @@
   color: rgba(7, 0, 0, 0.87);
   background-color: #f2f2f2;
 }
-
 h1 {
-  color:#197898;
+  color:#a870a8;
   font-family: "NectoMono", san-serif;
   font-size: 2.5em;
   line-height: 1.1;
@@ -38,6 +37,7 @@ h3 {
   margin: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
+  padding-bottom: 0.2rem;
   /* border-bottom: 4px solid #a870a8; 
   padding-bottom: 5px; */
 }
