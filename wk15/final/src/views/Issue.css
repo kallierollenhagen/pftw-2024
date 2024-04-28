@@ -37,6 +37,7 @@ nav {
 @media screen and (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr; /* Switch to single column layout */
+    }
 
     .nav {
         flex-direction: column; /* Stack items vertically */
@@ -47,19 +48,16 @@ nav {
         margin-left: 0; /* Reset margin */
         margin-top: 10px; /* Add space between masthead and h1 */
     }
-    }
-
-    @media screen and (max-width: 768px) {
-        .mockup {
+     .mockup {
             float: none; /* Remove float */
             margin-right: 0; /* Reset margin */
             margin-bottom: 20px; /* Add space below mockup image */
         }
     
-        .location-body h2,
-        .location-body p,
-        .location-body h3,
-        .location-body p {
-            margin-left: 0; /* Reset margin for text */
+    .location-body h2,
+    .location-body p,
+    .location-body h3,
+    .location-body p {
+        margin-left: 0; /* Reset margin for text */
         }
-}
+    }
