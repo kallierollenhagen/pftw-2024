@@ -9,7 +9,7 @@
   .location-card {
     color: #ffffff;
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
     padding: 10px;
     text-align: center;
     margin: 10px;
@@ -19,7 +19,7 @@
     position: relative;
   }
   .location-card img {
-    max-width: 450px;
+    max-width: 500px;
     width: 100%;
     filter: grayscale(1);
 }
@@ -31,17 +31,15 @@
     text-align: center;
     color: white;
   }
-.centered {
+  .centered {
     font-family: "Apfel", sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 24px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 35px; /* Adjust to 25px from the top */
+    left: 0; /* Pin it to the left side */
     padding: 10px;
-    margin: 10px;
-    background-color: rgba(238, 188, 215, 0.9);
+    margin: 0; /* Remove margin */
     display: inline;
 }

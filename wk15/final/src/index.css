@@ -22,9 +22,11 @@
   background-color: #f2f2f2;
 }
 h1 {
-  color:#a870a8;
-  font-family: "NectoMono", san-serif;
-  font-size: 2.5em;
+  color: #eeeeee;
+  font-family: "Apfel", san-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 2em;
   line-height: 1.1;
 }
 h2{
@@ -38,16 +40,14 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 3px;
   padding-bottom: 0.2rem;
-  /* border-bottom: 4px solid #a870a8; 
-  padding-bottom: 5px; */
 }
 a {
   color: #ffffff;
   text-decoration: inherit;
 }
-a:hover {
+/* a:hover {
   color: #d4f542;
-}
+} */
 
 body {
   margin: 0;

@@ -17,7 +17,7 @@ export function Home() {
                                 <img style={{ borderColor: issue.color1, borderWidth: '15px' }} src={issue.cover} alt={issue.location} />
                             </Link>
                             <Link to={issue.slug}>
-                                <h2 className="centered">
+                                <h2 className="centered" style={{ backgroundColor: issue.color2 }}>
                                     <strong>{issue.location}</strong>
                                 </h2>
                             </Link>

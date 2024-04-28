@@ -3,21 +3,24 @@
 import { Link, useParams } from "react-router-dom";
 import './Issue.css';
 import masthead from "/public/masthead-purple.png";
+import issueData from "../assets/issue-list.json";
 
 // eslint-disable-next-line react/prop-types
 export function Issue({data}) {
     const {slug} = useParams();
     console.log("slug", slug);
     const selectedIssue = data.find((issue) => issue.slug === slug)
-    console.log(selectedIssue)
+    console.log(selectedIssue);
+    
     return (
         <div>
             <nav>
-                <h1>{selectedIssue.location}</h1>
+                <h1 style={{ backgroundColor: selectedIssue.color2, padding: '12px' }}>{selectedIssue.location}</h1>
                 <Link to="/">
                     <img className="issue-masthead" src={masthead} alt="Wayside masthead" />
                 </Link>
             </nav>
+
             <div className="location-body">
                 <img className="mockup" src={selectedIssue.mockup} alt={selectedIssue.location} />
                 <div className="body-text">
@@ -40,5 +43,5 @@ export function Issue({data}) {
                 <p>Copyright © 2024 Rural Design Studio</p>
             </div>
         </div>
-    )
+    );
 }
