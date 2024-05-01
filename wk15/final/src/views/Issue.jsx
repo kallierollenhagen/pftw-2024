@@ -1,11 +1,8 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react-hooks/rules-of-hooks */
 import { Link, useParams } from "react-router-dom";
 import './Issue.css';
 import masthead from "/public/masthead-purple.png";
 import issueData from "../assets/issue-list.json";
 
-// eslint-disable-next-line react/prop-types
 export function Issue({data}) {
     const {slug} = useParams();
     console.log("slug", slug);
@@ -38,8 +35,10 @@ export function Issue({data}) {
                 <img src={selectedIssue.image4} alt={selectedIssue.location} />
                 <img src={selectedIssue.image5} alt={selectedIssue.location} />
             </div>
-            <div className="Footer">
+            <div className="footer">
                 <button><Link to="/">Return Home</Link></button>
+            </div>
+            <div className="copyright">
                 <p>Copyright © 2024 Rural Design Studio</p>
             </div>
         </div>

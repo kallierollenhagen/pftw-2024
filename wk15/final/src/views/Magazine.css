@@ -1,0 +1,12 @@
+/* new class */
+
+.magazine-card {
+
+}
+
+.collection-magazine {
+    display: grid;
+    grid-template-columns: repeat(4, [col-start] 1fr);
+    grid-gap: 10px;
+    justify-content: center; /* Center the grid items horizontally */
+}
