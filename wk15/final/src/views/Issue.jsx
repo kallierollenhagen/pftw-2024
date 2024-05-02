@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import './Issue.css';
 import masthead from "/public/masthead-purple.png";
 import issueData from "../assets/issue-list.json";
+import emailIcon from "/public/email-icon.png";
+import instagramIcon from "/public/instagram-icon.png";
 
 export function Issue({data}) {
     const {slug} = useParams();
@@ -12,10 +14,10 @@ export function Issue({data}) {
     return (
         <div>
             <nav>
-                <h1 style={{ backgroundColor: selectedIssue.color2, padding: '12px' }}>{selectedIssue.location}</h1>
                 <Link to="/">
                     <img className="issue-masthead" src={masthead} alt="Wayside masthead" />
                 </Link>
+                <h1 style={{ backgroundColor: selectedIssue.color2, padding: '12px' }}>{selectedIssue.location}</h1>
             </nav>
 
             <div className="location-body">
@@ -37,6 +39,14 @@ export function Issue({data}) {
             </div>
             <div className="footer">
                 <button><Link to="/">Return Home</Link></button>
+            </div>
+            <div className="footer">
+                <a href="mailto:dummy@example.com">
+                <img src={emailIcon} alt="Email icon" />
+                </a>
+                <a href="https://www.instagram.com/dummy/" target="_blank" rel="noopener noreferrer">
+                <img src={instagramIcon} alt="Instagram icon" />
+                </a>
             </div>
             <div className="copyright">
                 <p>Copyright © 2024 Rural Design Studio</p>

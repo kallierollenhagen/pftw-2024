@@ -1,19 +1,19 @@
 nav {
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Distribute items along the main axis */
+    align-items: center; /* align items vertically */
+    justify-content: space-between; /* distribute items along the main axis */
 }
 
 .issue-masthead {
-    max-width: 250px;
-    margin-left: auto; /* Push masthead to the right */
+    max-width: 200px;
+    margin-left: auto; /* push location banner to the right */
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, [col-start] 1fr);
     grid-gap: 10px;
-    justify-content: center; /* Center the grid items horizontally */
+    justify-content: center; /* center grid items horizontally */
 }
 
 .location-body {
@@ -23,41 +23,41 @@ nav {
 }
 .mockup {
     max-width: 350px;
-    float: left; /* Align mockup image to the left */
-    margin-right: 20px; /* Add space between mockup image and text */
+    float: left; /* align mockup image to the left */
+    margin-right: 20px; /* add space between mockup image and text */
 }
 .body-text {
-    text-align: left; /* Align text to the left */
-    margin-left: 0; /* Reset margin */
-    margin-top: 0; /* Reset margin */
+    text-align: left; 
+    margin-left: 0; 
+    margin-top: 0; 
     padding: 0;
 }
 
 /* Media query for switching to single column layout */
 @media screen and (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr; /* Switch to single column layout */
+        grid-template-columns: 1fr; /* wwitch to single column layout */
     }
 
     .nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start of the container */
+        flex-direction: column; /* stack items vertically */
+        align-items: flex-start; /* align items to the start of the container */
     }
 
     .issue-masthead {
-        margin-left: 0; /* Reset margin */
-        margin-top: 10px; /* Add space between masthead and h1 */
+        margin-left: 0; 
+        margin-top: 10px; 
     }
      .mockup {
             float: none; /* Remove float */
-            margin-right: 0; /* Reset margin */
-            margin-bottom: 20px; /* Add space below mockup image */
+            margin-right: 0; 
+            margin-bottom: 20px; 
         }
     
     .location-body h2,
     .location-body p,
     .location-body h3,
     .location-body p {
-        margin-left: 0; /* Reset margin for text */
+        margin-left: 0; 
         }
     }

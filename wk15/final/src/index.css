@@ -26,16 +26,16 @@ h1 {
   font-family: "Apfel", san-serif;
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-size: 2em;
+  font-size: 1.8em;
   line-height: 1.1;
 }
 h2{
   font-family: "NectoMono", san-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin: 0.5rem;
 }
 h3 {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -45,9 +45,6 @@ a {
   color: #ffffff;
   text-decoration: inherit;
 }
-/* a:hover {
-  color: #d4f542;
-} */
 
 body {
   margin: 0;
@@ -61,25 +58,27 @@ img {
   max-width: 500px;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
 button {
-  border-radius: 8px;
-  border: 1px solid #a870a8;
+  border: none; /* Remove border */
   padding: 0.8em;
   margin: 1.5em;
   font-size: 1.2em;
   font-family: inherit;
   background-color: #a870a8;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: #646cff;
+  background-color: #b58f24;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
+
 .copyright-text {
   font-size: 9px;
 }
+

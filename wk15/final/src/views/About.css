@@ -1,0 +1,66 @@
+/* masthead style */
+.issue-masthead {
+    max-width: 200px;
+    margin-left: auto; /* push location banner to the right */
+}
+
+/* navigation style */
+.sticky-nav {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+  
+.sticky-nav-item {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #a870a8; /* Adjust color as needed */
+    color: white;
+    text-decoration: none;
+}
+  
+.sticky-nav-item:hover {
+    background-color: #cd9526; /* Adjust hover color as needed */
+}
+
+/* About.css */
+
+.about {
+    padding: 35px 0px;
+}
+.about-head {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+  }
+  
+  .about-head img {
+    flex: 1 100%; /* Make the image span the full width */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the entire container */
+  }
+  
+  .about-block {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .about-block img {
+    max-width: 275px;
+    float: left; /* Align mockup image to the left */
+    vertical-align: auto;
+    margin-right: 30px; /* Add space between mockup image and text */
+  }
+  .about-block text {
+    text-align: left; /* Align text to the left */
+    margin-top: 0; /* Reset margin */
+    padding: 0;
+  }
+  .about-block p {
+    font-size: 20px;
+  }

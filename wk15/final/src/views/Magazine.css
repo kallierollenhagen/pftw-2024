@@ -1,12 +1,33 @@
-/* new class */
-
-.magazine-card {
-
-}
-
 .collection-magazine {
     display: grid;
-    grid-template-columns: repeat(4, [col-start] 1fr);
-    grid-gap: 10px;
-    justify-content: center; /* Center the grid items horizontally */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.magazine-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.magazine-card img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.magazine-card h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.magazine-card p {
+    font-size: 18px;
+    font-weight: bold;
+}
+.magazine-link {
+    color: #a870a8;
+    font-size: 22px;
 }
