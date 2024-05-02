@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import './Magazine.css';
 import masthead from "/public/masthead-purple.png";

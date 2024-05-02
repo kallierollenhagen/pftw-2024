@@ -1,3 +1,4 @@
+
 import { Link, useParams } from "react-router-dom";
 import './Issue.css';
 import masthead from "/public/masthead-purple.png";
