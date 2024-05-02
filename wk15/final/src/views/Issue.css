@@ -78,6 +78,15 @@
         color: white;
         text-decoration: none;
       }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+     
+      h1 {
+        order: 2; /* Move the h1 below masthead */
+        margin-top: 10px; /* Add space between masthead and h1 */
+      }
     
     .grid {
         grid-template-columns: 1fr; 

@@ -1,5 +1,5 @@
 
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './About.css';
 import masthead from "/public/masthead-purple.png";
 import mockup from "/public/mockup-square.png";

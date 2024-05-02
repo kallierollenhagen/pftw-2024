@@ -1,11 +1,9 @@
 // Home.jsx
 
-import React from 'react';
 import { Link } from 'react-router-dom';
 import issueData from "../assets/issue-list.json";
 import "./Home.css";
 import masthead from "/public/masthead-purple.png";
-import mockup from "/public/mockup-square.png";
 import emailIcon from "/public/email-icon.png";
 import instagramIcon from "/public/instagram-icon.png";
 

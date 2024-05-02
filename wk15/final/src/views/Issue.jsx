@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 
 import { Link, useParams } from "react-router-dom";
 import './Issue.css';
 import masthead from "/public/masthead-purple.png";
-import issueData from "../assets/issue-list.json";
 import emailIcon from "/public/email-icon.png";
 import instagramIcon from "/public/instagram-icon.png";
 
@@ -18,8 +18,13 @@ export function Issue({data}) {
                 <Link to="/">
                     <img className="issue-masthead" src={masthead} alt="Wayside masthead" />
                 </Link>
-                <h1 style={{ backgroundColor: selectedIssue.color2, padding: '12px' }}>{selectedIssue.location}</h1>
+                {/* <h1 style={{ backgroundColor: selectedIssue.color2, padding: '12px' }}>{selectedIssue.location}</h1> */}
+                <h1 style={{ color: selectedIssue.color2, padding: '10px' }}>{selectedIssue.location}</h1>
             </nav>
+            <div className="sticky-nav">
+                <Link to="/Magazine" className="sticky-nav-item">Printed Issues</Link>
+                <Link to="/About" className="sticky-nav-item">About</Link>
+            </div>
 
             <div className="location-body">
                 <img className="mockup" src={selectedIssue.mockup} alt={selectedIssue.location} />
